@@ -1,0 +1,45 @@
+html {
+  font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Serif;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.frontPageList {
+	margin: 8rem;
+}
+
+.frontPageList p {
+	font-size: 1rem;
+	line-height: 1.3rem;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #ddd;
+}
+.frontPageList a {
+	font-size: 1rem;
+	line-height: 1.3rem;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: red;
+}
+
+.frontPageList p:hover {
+	color:#3a3a3a;
+}
+
+.frontPageList a:hover {
+	color: blue;
+	font-kerning: 1px;
+}
+
+@media (max-width: 480px){
+
+}
+
