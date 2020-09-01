@@ -57,4 +57,11 @@ body {
   .frontPageList {
   	margin: 2rem;
   }
+  #note {
+    font-size: 12px;
+    line-height: 15px;
+    color: #333;
+    font-variant: normal;
+    text-transform: none;
+  }
 }
