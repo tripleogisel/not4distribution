@@ -1,0 +1,59 @@
+section {
+  margin: 20px;
+}
+
+.intro img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.tie {
+  max-height: 150px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 20%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex
+}
+
+.gallery img {
+  max-width: 160px;
+  min-width: 159px;
+  margin: 40px;
+}
+
+.outfit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-basis: 20%;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  margin: 0 auto;
+}
+
+a {
+  background-color: #222;
+  color: white;
+  display: block;
+  margin: 25px auto 100px auto;
+  width: 300px;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 16px;
+  border: none;
+  text-align: center;
+}
+
+a:hover {
+  background-color: blue;
+  text-decoration: underline;
+}
