@@ -1,0 +1,196 @@
+html {
+font-family: sans-serif;
+font-family: monospace;
+}
+
+body {
+	margin: 32px;
+}
+
+.clientList {
+	margin: 32px 0px;
+}
+
+ol {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	font-size: 20px;
+}
+
+h1 {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+h1:hover {
+	font-weight: 700;
+}
+
+.introduction {
+	margin-right: 600px;
+}
+
+.project {
+	border-top: 1px solid black;
+	margin-top: 96px;
+}
+
+.project h1, p, a {
+	margin-right: 25%;
+	margin-left: 25%;
+	text-align: center;
+	display: block;
+}
+
+a:hover {
+	background-color: blue;
+	color: white;
+	margin-left: 42%;
+	margin-right: 42%;
+}
+
+#imageButton {
+	margin-right: 0%;
+	margin-left: 0%;
+	display: block;
+	text-align: center;
+}
+
+#imageButton:hover {
+	margin-right: 0%;
+	margin-left: 0%;
+	display: block;
+	text-align: center;
+	background-color: white;
+}
+
+.experience {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 0%;
+    justify-content: space-between;
+}
+
+.experience div {
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	box-shadow: 0px 3px 9px rgba(0,0,0,0.00);
+}
+
+.experience div:hover {
+	height: 40px;
+	width: 40px;
+	background-color: #fafafa;
+/*	box-shadow: 0px 3px 9px rgba(0,0,0,0.14);*/
+}
+
+.bichuGallery {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 20%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 0px 0px 0px;
+}
+
+.bichu img {
+	max-width: 225px;
+	box-shadow:0px 10px 5px rgba(0,0,0,0.04);
+	margin:0px 0px 32px 0px;
+}
+
+.bichu img:hover {
+	box-shadow:0px 12px 5px rgba(0,0,0,0.14);
+}
+
+.codexGallery {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    justify-content: space-around;
+    margin: 32px 0px 0px 0px;
+}
+
+.codex img {
+	width: 48%;
+    height: auto;
+	box-shadow:0px 10px 5px rgba(0,0,0,0.04);
+	margin:0px 0px 32px 0px;
+}
+
+.volkswagenGallery {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 20%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 0px 0px 0px;
+}
+
+.volkswagen .mobile {
+	max-width: 225px;
+	box-shadow:0px 10px 5px rgba(0,0,0,0.04);
+	margin:32px 0px 0px 0px;
+}
+
+#fullWidth {
+	width: 100%;
+	border: .5px solid grey;
+	margin-top: 32px;
+}
+
+#responsive {
+	border: 0px;
+	margin-top: 32px;
+	width: 100%;
+}
+
+#fiftyFifty {
+	width: 50%;
+	margin-top: 16px;
+}
+
+.picdmoGallery {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 20%;
+    justify-content: space-around;
+    margin: 32px 0px 0px 0px;
+}
+
+.picdmo img {
+	width: 225px;
+    height: auto;
+}
+
+.fedexGallery {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    justify-content: space-around;
+    margin: 32px 0px 0px 0px;
+}
+
+.fedexGallery img {
+	width: 48%;
+    height: auto;
+	box-shadow:0px 10px 5px rgba(0,0,0,0.04);
+	margin:0px 0px 32px 0px;
+}
+
+.fedex a:hover {
+	background-color: blue;
+	color: white;
+	margin-left: 30%;
+	margin-right: 30%;
+}
