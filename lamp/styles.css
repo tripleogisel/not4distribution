@@ -1,0 +1,76 @@
+
+html {
+font-family: sans-serif;
+font-family: monospace;
+}
+
+p {
+	color: #3a3a3a;
+}
+
+a {
+	color: #3a3a3a;
+	text-decoration: none;
+}
+
+
+a:hover {
+	color: blue;
+}
+
+section {
+	margin: 2.4% 0% 0% 2.4%;
+	display: block;
+}
+
+.gallery {
+	display: block;
+	margin: 2.4%;
+}
+
+.galleryContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.gallery img {
+/*	margin: 0 auto;*/
+	text-align: center;
+	justify-content: space-between;
+	max-width: 24%;
+}
+
+.shop {
+	text-align: center;
+	margin-top: 15%;
+}
+
+
+/*mobile ish sizes*/
+@media (max-width: 480px){
+	section {
+		margin: 12.5% auto;
+		text-align: center;
+	}
+
+	.galleryContainer {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.gallery img {
+		max-width: 88%;	
+		display: block;
+		margin: 7.5% auto;
+	}
+
+	.gallery {
+	display: block;
+	margin: 0;
+}
+
+	.shop {
+		margin-bottom: 15%;
+	}
+}
+	
