@@ -20,14 +20,21 @@ li {
 	font-size: 15px;
 }
 
+.introduction, h1, a {
+	text-align: left;
+	margin: 0;
+}
+
+.introduction, h1, a:hover {
+	color: blue;
+}
+
 h1 {
 	font-size: 15px;
 	font-weight: 500;
 }
 
-h1:hover {
-	font-weight: 700;
-}
+body > div.introduction > h1:nth-child(4) > a
 
 .introduction {
 	margin-right: 700px;
