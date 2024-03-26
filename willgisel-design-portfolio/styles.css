@@ -20,12 +20,12 @@ li {
 	font-size: 15px;
 }
 
-.introduction, h1, a {
+.introduction > h1 > a {
 	text-align: left;
 	margin: 0;
 }
 
-.introduction, h1, a:hover {
+.introduction > h1 > a:hover {
 	color: blue;
 }
 
