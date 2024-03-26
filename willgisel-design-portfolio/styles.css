@@ -23,10 +23,14 @@ li {
 .introduction > h1 > a {
 	text-align: left;
 	margin: 0;
+	text-decoration: none;
 }
 
 .introduction > h1 > a:hover {
 	color: blue;
+	background-color: white;
+	margin: 0;
+	text-decoration: underline;
 }
 
 h1 {
