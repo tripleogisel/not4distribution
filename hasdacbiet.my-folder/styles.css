@@ -1,0 +1,200 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Show desktop layout by default */
+.mobile-only { display: none; }
+
+
+/* SPLIT SCREEN */
+.split {
+  display: flex;
+  height: 100vh;
+}
+
+/* EACH HALF */
+.panel {
+  flex: 1;
+  position: relative;
+  background: #2b0f0f; /* deep burgundy */
+  color: #f5f2ef;
+}
+
+/* CENTERED CONTENT */
+.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* NAV STACK */
+.nav {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.center img {
+	width: 330px;
+	opacity: 14%;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.nav a:hover {
+	text-decoration: underline;
+}
+
+/* CORNER CONTENT */
+.corner {
+  position: absolute;
+  max-width: 320px;
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.bottom-left a {
+	color: white;
+}
+
+.bottom-left h2 {
+	margin: 0 0 8px;
+}
+
+.bottom-left p {
+	margin: 0;
+}
+
+.bottom-left a:hover {
+	color: yellow;
+}
+
+.bottom-left {
+  bottom: 32px;
+  left: 32px;
+}
+
+.bottom-right {
+  bottom: 32px;
+  right: 32px;
+  text-align: right;
+}
+
+.bottom-right p {
+	margin: 0;
+}
+
+/* TYPE TWEAKS */
+h1 {
+  font-size: 120px;
+  opacity: 0.15;
+  margin: 0;
+}
+
+h2 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+
+  /* switch layouts */
+  .split { display: none; }
+  .mobile-only { display: flex; }
+
+  /* mobile panel takes full screen */
+  .mobile {
+    position: relative;
+    height: 100vh;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #2b0f0f;
+    color: #f5f2ef;
+  }
+
+  /* background logo behind the nav */
+  .mobile-bg {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 520px;          /* tweak until it matches your mock */
+    max-width: 140%;
+    opacity: 0.10;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* centered nav */
+  .mobile-nav {
+    flex: 1;               /* take the middle space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;             /* spacing like your screenshot */
+    z-index: 1;
+  }
+
+  .mobile-nav a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 22px;       /* bigger on mobile */
+    letter-spacing: 0.02em;
+  }
+
+  .mobile-nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* footer pinned to bottom */
+  .mobile-footer {
+    margin-top: auto;      /* pushes footer to bottom */
+    z-index: 1;
+  }
+
+  .mobile-footer h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .mobile-footer p {
+    margin: 0 0 18px 0;
+    font-size: 14px;
+    line-height: 1.55;
+    opacity: 0.75;
+    max-width: 42ch;       /* keeps it like your mock */
+  }
+
+  /* bottom row: handle left, email right */
+  .mobile-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  .mobile-meta span {
+    white-space: nowrap;
+  }
+}
+
+
