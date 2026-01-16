@@ -1,18 +1,15 @@
 /* RESET */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* Show desktop layout by default */
+/* VISIBILITY DEFAULTS */
 .mobile-only { display: none; }
 
-
-/* SPLIT SCREEN */
+/* SPLIT SCREEN (DESKTOP) */
 .split {
   display: flex;
   height: 100vh;
@@ -22,7 +19,7 @@ html, body {
 .panel {
   flex: 1;
   position: relative;
-  background: #2b0f0f; /* deep burgundy */
+  background: #2b0f0f;
   color: #f5f2ef;
 }
 
@@ -37,13 +34,14 @@ html, body {
 
 /* NAV STACK */
 .nav {
+  display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
 .center img {
-	width: 330px;
-	opacity: 14%;
+  width: 330px;
+  opacity: 0.14; /* was "14%" which is invalid */
 }
 
 .nav a {
@@ -53,85 +51,43 @@ html, body {
   letter-spacing: 0.02em;
 }
 
-.nav a:hover {
-	text-decoration: underline;
-}
+.nav a:hover { text-decoration: underline; }
 
-/* CORNER CONTENT */
+/* CORNER CONTENT (DESKTOP) */
 .corner {
   position: absolute;
   max-width: 320px;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.4;
   opacity: 0.9;
 }
 
-.bottom-left a {
-	color: white;
-}
+.bottom-left { bottom: 32px; left: 32px; }
+.bottom-left a { color: #f5f2ef; }
+.bottom-left a:hover { color: yellow; }
+.bottom-left h2 { margin: 0 0 8px; }
+.bottom-left p { margin: 0; }
 
-.bottom-left h2 {
-	margin: 0 0 8px;
-}
+.bottom-right { bottom: 32px; right: 32px; text-align: right; }
+.bottom-right a { color: #f5f2ef; text-decoration: none; display: block; }
+.bottom-right a:hover { text-decoration: underline; }
 
-.bottom-left p {
-	margin: 0;
-}
-
-.bottom-left a:hover {
-	color: yellow;
-}
-
-.bottom-left {
-  bottom: 32px;
-  left: 32px;
-}
-
-.bottom-right {
-  bottom: 32px;
-  right: 32px;
-  text-align: right;
-}
-
-.bottom-right a {
-    color: #f5f2ef;
-    margin-left: 14px;
-    text-decoration: none;
-}
-
-.bottom-right p {
-	margin: 0;
-
-}
-
-/* TYPE TWEAKS */
-h1 {
-  font-size: 120px;
-  opacity: 0.15;
-  margin: 0;
-}
-
-h2 {
-  margin: 0 0 8px 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
+/* MOBILE */
 @media (max-width: 768px) {
 
   /* switch layouts */
   .split { display: none; }
-  .mobile-only { display: flex; }
+  .mobile-only { display: block; } /* main is a block element */
 
-  /* mobile panel takes full screen */
-.mobile {
-  position: relative;
-  height: 100svh;
-  padding: 0 22px;
-  overflow: hidden;
-  background: #2b0f0f;
-  color: #f5f2ef;
-}
+  .mobile {
+    position: relative;
+    height: 100svh;
+    padding: 0 22px;
+    overflow: hidden;
+    background: #2b0f0f;
+    color: #f5f2ef;
+  }
+
 
   /* background logo behind the nav */
   .mobile-bg {
@@ -139,102 +95,80 @@ h2 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 520px;          /* tweak until it matches your mock */
-    max-width: 70%;
-    opacity: 0.24;
+    width: 520px;
+    max-width: 60%;
+    opacity: 0.18;
     pointer-events: none;
     z-index: 0;
   }
 
-  /* centered nav */
-.mobile-nav {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  /* nav centered relative to viewport (NOT affected by footer) */
+  .mobile-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
 
-  width: 100%;
-  z-index: 1;
-}
+    width: 100%;
+    z-index: 1;
+
+    opacity: 0;
+    animation: navFadeIn 1.2s ease-out forwards;
+    animation-delay: 0.2s;
   }
 
   .mobile-nav a {
     color: inherit;
     text-decoration: none;
-    font-size: 15px;       /* bigger on mobile */
+    font-size: 14px;
     letter-spacing: 0.1em;
   }
 
-  .mobile-nav a:hover {
-    text-decoration: underline;
+  .mobile-nav a:hover { text-decoration: underline; }
+
+  @keyframes navFadeIn {
+    from { opacity: 0; transform: translate(-50%, -46%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
   }
 
-  /* footer pinned to bottom */
-.mobile-footer {
-  position: absolute;
-  bottom: calc(28px + env(safe-area-inset-bottom));
-  left: 22px;
-
-  max-width: 320px;      /* 👈 controls 3-line wrap */
-  padding-right: 12px;   /* breathing room */
-
-  z-index: 1;
-}
-
-  .mobile-footer h2 {
-    margin: 0 0 5px 0;
-    font-size: 15px;
-    font-weight: 300;
+  /* footer pinned bottom, constrained to readable column for 3-line wrap */
+  .mobile-footer {
+    position: absolute;
+    margin-top: 20px;
+    bottom: calc(0px + env(safe-area-inset-bottom));
+    max-width: 320px;
+    z-index: 0;
   }
-
-  .mobile-nav {
-  opacity: 0;
-  animation: navFadeIn 1.2s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-/* animation definition */
-@keyframes navFadeIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -46%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-}
 
   .mobile-footer p {
     margin: 0 0 18px 0;
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 1.35;
     opacity: 0.75;
-    max-width: 46ch;       /* keeps it like your mock */
   }
 
-  /* bottom row: handle left, email right */
   .mobile-meta {
     display: flex;
-    justify-content: bottom-left;
     gap: 13px;
-    font-size: 13px;
+    font-size: 14px;
     opacity: 0.85;
-    color: white;
   }
 
   .mobile-meta a {
-  	color: #f5f2ef;
+    color: #f5f2ef;
+    text-decoration: none;
+    white-space: nowrap;
+    font
   }
 
-  .mobile-meta span {
-    white-space: nowrap;
+  .mobile-meta a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-nav { animation: none; opacity: 1; }
   }
 }
-
-
